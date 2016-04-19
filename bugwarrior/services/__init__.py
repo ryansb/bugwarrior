@@ -202,7 +202,7 @@ class IssueService(object):
             owner = self.get_owner(issue)
             include_owners = [only_if_assigned]
 
-            if self.config.getboolean(self.target, 'also_unassigned', None):
+            if self.config.getboolean(self.target, 'also_unassigned'):
                 include_owners.append(None)
 
             return owner in include_owners
